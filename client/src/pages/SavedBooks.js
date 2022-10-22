@@ -58,6 +58,7 @@ const SavedBooks = () => {
         variables: { bookId },
       })
 removeBookId(bookId)
+console.log(bookId)
     } catch (err) {
       console.error(err);
     }
@@ -90,7 +91,9 @@ removeBookId(bookId)
                   <Card.Title>{book.title}</Card.Title>
                   <p className='small'>Authors: {book.authors}</p>
                   <Card.Text>{book.description}</Card.Text>
-                  <Button className='btn-block btn-danger' onClick={() => handleDeleteBook(book.bookId)}>
+                  <Button className='btn-block btn-danger' onClick={() => {
+                  console.log(book.bookId)
+                    handleDeleteBook(book.bookId)}}>
                     Delete this Book!
                   </Button>
                 </Card.Body>
